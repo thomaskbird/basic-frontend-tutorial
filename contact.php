@@ -9,48 +9,44 @@
 </head>
 <body>
 
-<?php require 'lib/homepage-hero.php'; ?>
+<?php //require 'lib/homepage-hero.php'; ?>
 
 <?php require 'lib/header.php'; ?>
 
-<div class="wrap" id="mission">
+<div class="wrap" id="contact-form">
     <div class="container text-center">
-        <h2>Mission</h2>
+        <h2>Get in touch, with us!</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores aut debitis, eum ex facilis fugiat harum illum inventore molestias necessitatibus omnis possimus praesentium quae quam quisquam, repudiandae voluptas voluptate? Aliquid asperiores aut debitis, eum ex facilis fugiat harum illum inventore molestias necessitatibus omnis possimus praesentium quae quam quisquam, repudiandae voluptas voluptate.</p>
+
+        <form action="process/contact.php" method="post" class="text-left">
+
+            <div class="form-group width-full">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name..." />
+            </div>
+
+            <div>
+                <div class="form-group width-half">
+                    <label for="phone">Phone</label>
+                    <input type="text" class="form-control" name="phone" id="phone" placeholder="Enter phone..." />
+                </div>
+                <div class="form-group width-half">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" name="email" id="email" placeholder="Enter email..." />
+                </div>
+            </div>
+
+            <div class="form-group width-full">
+                <label for="message">Message</label>
+                <textarea class="form-control" name="message" id="message" placeholder="Enter your message..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Send message</button>
+            </div>
+
+        </form>
     </div>
-</div>
-
-<div class="wrap" id="devices">
-    <div class="container text-center">
-        <div class="left">
-            <img class="img img-thumbnail" src="img/devices.jpg" alt="Works on all devices" />
-        </div>
-        <div class="right">
-            <h2>Works where ever you are, on whatever device you're using!</h2>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi commodi consequuntur, dolore dolores, eum expedita explicabo illo inventore iusto molestiae non quae quam quasi recusandae repellat, totam veniam vitae voluptatibus!</p>
-
-            <a class="btn btn-primary" href=""><b>Download</b> from the app store</a>
-        </div>
-    </div>
-</div>
-
-<div class="wrap" id="our-people">
-    <div class="container text-center">
-        <h2>We value our team, check us out!</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores aut debitis, eum ex facilis fugiat harum illum inventore molestias necessitatibus omnis possimus praesentium quae quam quisquam, repudiandae voluptas voluptate? Aliquid asperiores aut debitis, eum ex facilis fugiat harum illum inventore molestias necessitatibus omnis possimus praesentium quae quam quisquam, repudiandae voluptas voluptate. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores aut debitis, eum ex facilis fugiat harum illum inventore molestias necessitatibus omnis possimus praesentium quae quam quisquam, repudiandae voluptas voluptate? Aliquid asperiores aut debitis, eum ex facilis fugiat harum illum inventore molestias necessitatibus omnis possimus praesentium quae quam quisquam, repudiandae voluptas voluptate.</p>
-    </div>
-</div>
-
-<div class="wrap" id="about">
-    <ul>
-        <li><img class="montage" src="img/people-1.jpg" /></li>
-        <li><img class="montage" src="img/people-2.jpg" /></li>
-        <li><img class="montage" src="img/people-3.jpg" /></li>
-        <li><img class="montage" src="img/people-4.jpg" /></li>
-        <li><img class="montage" src="img/people-5.jpg" /></li>
-        <li><img class="montage" src="img/people-6.jpg" /></li>
-    </ul>
 </div>
 
 <div class="wrap" id="map-intro">

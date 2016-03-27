@@ -37,11 +37,22 @@ ul {
     margin: 0;
 }
 
+label {
+    display: block;
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
 /**
  *  Helper classes
  */
 .text-center {
     text-align: center;
+}
+
+.text-left {
+    text-align: left;
 }
 
 .img {
@@ -80,6 +91,33 @@ ul {
     margin: 0 auto;
 }
 
+.form-group {
+    float: left;
+    margin-bottom: 10px;
+}
+
+.width-full {
+    width: 100%;
+}
+
+.width-half {
+    width: 49%;
+}
+
+.width-half:first-child {
+    margin-right: 2%;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    color: #aaa;
+    font-weight: 100;
+    box-sizing: border-box;
+}
+
 /**
  *  Core styles
  */
@@ -91,6 +129,8 @@ ul {
 
 #hero .container {
     padding: 200px 0;
+
+    padding: top
 }
 
 #hero h1, #hero h4 {
@@ -112,12 +152,11 @@ ul {
 #hero h4 {
     font-size: 34px;
     margin: 0;
+    font-weight: 300;
 }
 
 .hero-btns {
-    list-style: none;
     margin: 50px 0 0;
-    padding: 0;
 }
 
 .hero-btns li {
@@ -160,12 +199,6 @@ ul {
     background: #603D77;
 }
 
-#navigation ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
 #navigation li {
     display: inline-block;
 }
@@ -176,11 +209,15 @@ ul {
     text-decoration: none;
     padding: 15px 20px;
     display: inherit;
+    border-top: 1px solid transparent;
+    border-bottom: 5px solid transparent;
 }
 
 #navigation a:hover {
     color: #fff;
     background: #513067;
+    border-top: 1px solid #C3A3D8;
+    border-bottom: 5px solid #3B1156;
 }
 
 #mission {
@@ -198,7 +235,7 @@ ul {
 
 #about img {
     width: 100%;
-    opacity: .75;
+    opacity: .5;
 }
 
 #about img:hover {
@@ -235,8 +272,59 @@ ul {
     text-decoration: underline;
 }
 
-#devices, #mission, #our-people, #map-intro, #footer {
+#contact-form {
+    background: #f5f5f5;
+}
+
+#devices, #mission, #our-people, #map-intro, #footer, #contact-form, .inside-page-content {
     padding: 50px 0;
+}
+
+.inside-page-content .sidebar {
+    width: 25%;
+    float: left;
+}
+
+.inside-page-content .content {
+    width: 70%;
+    float: right;
+}
+
+.module {
+    width: 100%;
+    background: #fff;
+    border: 1px solid #f5f5f5;
+    padding: 5px 0;
+}
+
+.module .module-header {
+    background: #f5f5f5;
+}
+
+.module .module-header h4 {
+    margin: 0;
+    padding: 10px;
+    font-weight: 400;
+    color: #333;
+}
+
+.module ul {
+
+}
+
+.module li {
+
+}
+
+.module a {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #666;
+}
+
+.module a:hover {
+    background: #f5f5f5;
 }
 
 @media( max-width: 768px ) {
