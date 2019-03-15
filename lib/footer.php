@@ -1,5 +1,5 @@
 <div class="wrap" id="footer">
-    <div class="container text-center">
+    <div class="container container__stacked text-center">
         <h2><b>Music Made Easy,</b> Just The Way We Like It!</h2>
 
         &copy; <?php echo date('Y'); ?> All rights reserved.

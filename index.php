@@ -14,7 +14,7 @@
 <?php require 'lib/header.php'; ?>
 
 <div class="wrap" id="mission">
-    <div class="container text-center">
+    <div class="container container__stacked text-center">
         <h2>Mission</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores aut debitis, eum ex facilis fugiat harum illum inventore molestias necessitatibus omnis possimus praesentium quae quam quisquam, repudiandae voluptas voluptate? Aliquid asperiores aut debitis, eum ex facilis fugiat harum illum inventore molestias necessitatibus omnis possimus praesentium quae quam quisquam, repudiandae voluptas voluptate.</p>
     </div>
@@ -36,7 +36,7 @@
 </div>
 
 <div class="wrap" id="our-people">
-    <div class="container text-center">
+    <div class="container container__stacked text-center">
         <h2>We value our team, check us out!</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores aut debitis, eum ex facilis fugiat harum illum inventore molestias necessitatibus omnis possimus praesentium quae quam quisquam, repudiandae voluptas voluptate? Aliquid asperiores aut debitis, eum ex facilis fugiat harum illum inventore molestias necessitatibus omnis possimus praesentium quae quam quisquam, repudiandae voluptas voluptate. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores aut debitis, eum ex facilis fugiat harum illum inventore molestias necessitatibus omnis possimus praesentium quae quam quisquam, repudiandae voluptas voluptate? Aliquid asperiores aut debitis, eum ex facilis fugiat harum illum inventore molestias necessitatibus omnis possimus praesentium quae quam quisquam, repudiandae voluptas voluptate.</p>
     </div>
@@ -54,35 +54,37 @@
 </div>
 
 <div class="wrap" id="map-intro">
-    <div class="container">
+    <div class="container container__stacked">
         <h2 class="text-center">We have numerous locations globally</h2>
 
-        <div class="address">
+        <div class="row">
+          <div class="address">
             <p><b>Headquarters</b><br/>
-            123 Somewhere Rd.<br/>
-            Silicon Valley, CA 94301<br/>
-            P: 800-567-4958</p>
-        </div>
+              123 Somewhere Rd.<br/>
+              Silicon Valley, CA 94301<br/>
+              P: 800-567-4958</p>
+          </div>
 
-        <div class="address">
+          <div class="address">
             <p><b>Headquarters</b><br/>
-                123 Somewhere Rd.<br/>
-                Silicon Valley, CA 94301<br/>
-                P: 800-567-4958</p>
-        </div>
+              123 Somewhere Rd.<br/>
+              Silicon Valley, CA 94301<br/>
+              P: 800-567-4958</p>
+          </div>
 
-        <div class="address">
+          <div class="address">
             <p><b>Headquarters</b><br/>
-                123 Somewhere Rd.<br/>
-                Silicon Valley, CA 94301<br/>
-                P: 800-567-4958</p>
-        </div>
+              123 Somewhere Rd.<br/>
+              Silicon Valley, CA 94301<br/>
+              P: 800-567-4958</p>
+          </div>
 
-        <div class="address">
+          <div class="address">
             <p><b>Headquarters</b><br/>
-                123 Somewhere Rd.<br/>
-                Silicon Valley, CA 94301<br/>
-                P: 800-567-4958</p>
+              123 Somewhere Rd.<br/>
+              Silicon Valley, CA 94301<br/>
+              P: 800-567-4958</p>
+          </div>
         </div>
     </div>
 </div>
