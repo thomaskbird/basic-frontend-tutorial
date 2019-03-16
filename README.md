@@ -23,3 +23,5 @@ Typically your index file will be your homepage, so we'll start there and begin 
 To run this code and view it, go into your command prompt and cd into this directory then run this command:
 
 `php -S localhost:8000`
+
+To see the full tutorial that you canfollow along with [go here](tutorial-assets/tutorial.md)

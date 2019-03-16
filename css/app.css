@@ -85,18 +85,11 @@ label {
     display: flex;
 }
 
-.left, .right {
+.left,
+.right {
     flex: 1;
     padding: 2.5%;
     box-sizing: border-box;
-}
-
-.left {
-
-}
-
-.right {
-
 }
 
 .form-group {
@@ -286,18 +279,23 @@ label {
     background: #f5f5f5;
 }
 
-#devices, #mission, #our-people, #map-intro, #footer, #contact-form, .inside-page-content {
+#devices,
+#mission,
+#our-people,
+#map-intro,
+#footer,
+#contact-form,
+.inside-page-content {
     padding: 50px 0;
 }
 
 .inside-page-content .sidebar {
-    width: 25%;
-    float: left;
+    flex: 1;
 }
 
 .inside-page-content .content {
-    width: 70%;
-    float: right;
+    flex: 3;
+    margin-left: 30px;
 }
 
 .module {
