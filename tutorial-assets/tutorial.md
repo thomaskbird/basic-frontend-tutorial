@@ -58,12 +58,12 @@ So if we look at the example image, we can basically break the website down into
 - Map
 - Footer
 
-If you look at the design we will notice that there are essentially two containers around each section. There is an outside container that spans the full width of the viewable area and an inside container that is holds the content within 1170px centered on the page. Below is a graphic with the outercontainer highlighted with red and the inside container highlighted with green.
+If you look at the design we will notice that there are essentially two containers around each section. There is an outside container that spans the full width of the viewable area and an inside container that holds the content within 1170px and centered on the page. Below is a graphic with the outer container highlighted with red and the inside container highlighted with green.
 
 [![alt text](img/sample-full-finished-example-container-highlights.jpg "Containers highlighted")](img/sample-full-finished-example-container-highlights.jpg)
 
 #### Step 4
-We are gonna create 4 structural elements, a wrap, container, container__stacked and row. Your wrap will be the red outlined full container, the container will be a container that has columns sitting side by side in it. The container__stacked will create a container that stacks the inner elements instead of making columns sitting side by side. Finally we will create a row that will be for inner elements that need to be stacked but also have inner elements that are sitting side by side. If this doesn't make sense right now it's fine well explain more in depth later.
+Next let's create 4 structural elements, a wrap, container, container__stacked and row. Your wrap will be the red outlined full container, the green outlined area will be a container that has columns sitting side by side in it. The container__stacked will create a container that stacks the inner elements instead of making columns sitting side by side. Finally we will create a row that will be for inner elements that need to be stacked but also have inner elements that are sitting side by side. If this doesn't make sense right now it's fine well explain more in depth later.
 
 So let's add some markup to our example, to create the inner and outer containers, for this well use `section` html tags and `div` tags:
 
