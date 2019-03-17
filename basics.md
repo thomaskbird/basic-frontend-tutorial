@@ -95,6 +95,7 @@ p {
 }
 ```
 
+#### Multiple classes
 We should also note that attributes can have multiple values, this is specifically helpful with classes. Let's use example markup:
 ```html
 <div class="container"></div>
@@ -126,3 +127,7 @@ We can target and add styles like this:
   ...rules
 }
 ```
+
+#### css defaults
+Every rule has a default value, there are also cases where if a certain rule is set, with a specific value, that it will inherently receive other rules by default. A very specific case of this is `display: flex`. If you set an element to `display: flex` it also receives by default a `flex-direction` which has a default of `row`. So if you set an element to `display: flex;` it will inherently receive `flex-direction: row;` by default without you having to explicitly write or set this.
+
