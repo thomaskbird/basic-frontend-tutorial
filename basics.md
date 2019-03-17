@@ -4,14 +4,14 @@
 
 What is a website? A website is a compilation of webpages, these webpages comprise of html, html is a set of markup/tags. What are html tags? Simply put they are a set of textual input that represent kinds of tags. The graphic below illustrates the various parts of the tag.
 
-[![alt text](tutorial-assets/html-tag-explanation.jpg "HTML Tag explanation")](tutorial-assets/html-tag-explanation.jpg)
+[![alt text](tutorial-assets/img/html-tag-explanation.jpg "HTML Tag explanation")](tutorial-assets/img/html-tag-explanation.jpg)
 
 ### CSS
 Styles are what describe the visual style of these elements. They use selectors with style rules to define how each html element should look. By default browsers apply a base level of styling just for your info.
 
 Style rules follow the following format:
 
-[![alt text](tutorial-assets/css-explanation.jpg "CSS explanation")](tutorial-assets/css-explanation.jpg)
+[![alt text](tutorial-assets/img/css-explanation.jpg "CSS explanation")](tutorial-assets/img/css-explanation.jpg)
 
 ```
 selector {
@@ -92,5 +92,37 @@ p {
   margin: 20px 0;
   font-size: 22px;
   line-height: 150%;
+}
+```
+
+We should also note that attributes can have multiple values, this is specifically helpful with classes. Let's use example markup:
+```html
+<div class="container"></div>
+```
+
+We can target this in css like this:
+```css
+.container {
+  ...rules
+}
+```
+
+But we could also have multiple classes on the same element like this, note that each class name is separated by a space. Also keeping in mind that `classes` and `ids` cannot contain spaces inside of the name, it's better to use camelcase, `-` or `_` here we used `-`:
+```html
+<div class="container second-class third-class"></div>
+```
+
+We can target and add styles like this:
+```css
+.container {
+  ...rules
+}
+
+.second-class {
+  ...rules
+}
+
+.third-class {
+  ...rules
 }
 ```

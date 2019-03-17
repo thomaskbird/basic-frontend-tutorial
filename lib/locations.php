@@ -1,4 +1,4 @@
-<div class="wrap" id="map-intro">
+<section class="wrap" id="map-intro">
     <div class="container container__stacked">
         <h2 class="text-center">We have numerous locations globally</h2>
 
@@ -32,4 +32,4 @@
             </div>
         </div>
     </div>
-</div>
+</section>
