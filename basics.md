@@ -1,15 +1,19 @@
 # Basic 
 
-### HTML Tags
+## HTML Tags
 
 What is a website? A website is a compilation of webpages, these webpages comprise of html, html is a set of markup/tags. What are html tags? Simply put they are a set of textual input that represent kinds of tags. The graphic below illustrates the various parts of the tag.
 
 [![alt text](tutorial-assets/img/html-tag-explanation.jpg "HTML Tag explanation")](tutorial-assets/img/html-tag-explanation.jpg)
 
-### CSS
+## CSS
 Styles are what describe the visual style of these elements. They use selectors with style rules to define how each html element should look. By default browsers apply a base level of styling just for your info.
 
-Style rules follow the following format:
+#### Cascade meaning
+Stylesheets and styles are called cascading stylesheets because they allow for styles to be overwritten, ie styles define at the top of the page will be overwritten by styles written below at the end of the file. This can be avoided depending on selectors, selectors with more specificity are typically more likely to override selectors with less specificity.  
+
+#### Style formats
+Rules follow the following format:
 
 [![alt text](tutorial-assets/img/css-explanation.jpg "CSS explanation")](tutorial-assets/img/css-explanation.jpg)
 
@@ -19,7 +23,8 @@ selector {
 }
 ```
 
-Selectors are typically broken down into three main categories:
+#### Selectors 
+Are typically broken down into three main categories:
 - tagName
 - id
 - class
@@ -64,6 +69,7 @@ p {
 }
 ```
 
+#### CSS Rules
 Now that we know what selectors are let's look at rules, rules are made of two parts, the name of the rule and the rules value. Take this example, we'll write a rule that sets the style of a `font-size` to `22px`:
 
 ```css
@@ -128,6 +134,5 @@ We can target and add styles like this:
 }
 ```
 
-#### css defaults
+#### CSS defaults
 Every rule has a default value, there are also cases where if a certain rule is set, with a specific value, that it will inherently receive other rules by default. A very specific case of this is `display: flex`. If you set an element to `display: flex` it also receives by default a `flex-direction` which has a default of `row`. So if you set an element to `display: flex;` it will inherently receive `flex-direction: row;` by default without you having to explicitly write or set this.
-
