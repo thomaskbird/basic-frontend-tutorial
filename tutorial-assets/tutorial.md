@@ -10,7 +10,7 @@ To run this code and view it, go into your command prompt and cd into this direc
 
 ## Homepage template creation
 
-#### Step 1 
+#### Step 1
 - Create an index file, for this tutorial we'll use the `.php` extension so that you can make use of some basic php scripting.
 - So in the root directory create a `index.php` file and save it.
 - Next inside the `css` directory create a `app.css` file.
@@ -136,6 +136,8 @@ So let's add some markup to our example, to create the inner and outer container
 </html>
 ```
 
+#### Step 5
+
 We'll also link some javascript files near the bottom of the index. It's a similar concept to linking in the stylesheet with a slightly different syntax. Here is an example:
 ```html
 <script src="/path/to/file.js"></script>
@@ -220,6 +222,8 @@ So altogether, you'll also notice each `wrap` element has an `id` attribute, thi
 </html>
 ```
 
+#### Step 6
+
 Let's also add a custom font to help clean up the websites look and feel, we can do this by opening up our `css/app.css` and adding the following line at the top of the file:
 
 ```css
@@ -228,6 +232,7 @@ Let's also add a custom font to help clean up the websites look and feel, we can
 
 A brief explanation, on the web there are webfonts, this allows custom fonts that are not installed on a users computer to be used on the web. Google has an open source [font library](https://fonts.google.com/) that is free to use, it gives you a wide variety of fonts to choose from and it's a resource you don't have to host yourself.
 
+#### Step 7
 We'll also add some basic styling overrides to customize the look and feel of our webpage just a bit:
 
 ```css
@@ -307,6 +312,7 @@ box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.25);
 
 This is the same exact rule, the difference is that some of the rules have a `-prefix-`. These prefixes are because not every browser supports code written the same way. These browser prefixes allow the browsers that don't support the plain `box-shadow` rule, unless you have the browser prefix, the browser won't know how to apply this rule. You can find a good more detailed explanation here in this [article](https://www.lifewire.com/css-vendor-prefixes-3466867).
 
+#### Step 8
 This `.text-center` and `.text-left` class will allow us to easily align center or left the text inside of whatever tag we apply this class to. It can easily be attached any html tag by doing this `class="text-center"` or `class="text-left"`. Text by default aligns to the left, but there will be times where you may set something to align center, but have child items that need to be left aligned which is where the `.text-left` class will come in handy.
 
 ```css
@@ -351,7 +357,7 @@ The following is another helper class, by add this class similarly the way we di
 
 From here on out well focus on each individual section, adding the content and styling working from the top down.
 
-#### Step 5
+#### Step 9
 Let's start with the `#hero` section, let's add the following markup:
 
 ```html
@@ -414,7 +420,7 @@ Below are more styles to give the text a bit more life.
 }
 ```
 
-#### Step 6
+#### Step 10
 
 Next well style the buttons, positioning and display within this section:
 ```css
@@ -470,7 +476,7 @@ At this point your site should look something like this:
 
 [![alt text](img/sample-hero-section.jpg "Full example")](img/sample-hero-section.jpg)
 
-#### Step 7
+#### Step 11
 
 Next let's add the navigational html markup:
 
@@ -516,7 +522,7 @@ Next we'll add some styling:
 }
 ```
 
-#### Step 8
+#### Step 12
 
 Let's create the mission section next:
 
@@ -538,7 +544,7 @@ Let's give this section a slightly different background, we'll also add the `#ou
 }
 ```
 
-#### Step 9
+#### Step 13
 
 Let's add the devices section markup:
 
@@ -559,7 +565,7 @@ Let's add the devices section markup:
 </section>
 ```
 
-#### Step 10
+#### Step 14
 
 We'll a little about us content:
 
@@ -572,7 +578,7 @@ We'll a little about us content:
 </section>
 ```
 
-#### Step 11
+#### Step 15
 
 We're gonna add a nice montage to help show a little bit of the company culture. The images are supplied by [Pexels](https://www.pexels.com/), it's a great completely free option for finding stock photos that you can use. Again here we'll use a unordered list tag with list items containing an image element.
 ```html
@@ -624,7 +630,7 @@ We'll also added a bit of style so that when someone hovers the image the opacit
 }
 ```
 
-#### Step 12
+#### Step 16
 
 Let's now add a locations section, this could be for multiple office locations etc:
 
@@ -676,7 +682,7 @@ Just a bit of css to add some padding and tell the items to be equal width by sp
 }
 ```
 
-#### Step 13
+#### Step 17
 
 The next section is kind of special, we are going to basically utilize [Google Maps](https://maps.google.com/) and it's embed option to create a full width panning map. Google allows you to display a map on your webpage easily, using there [embed option](https://www.google.com/maps?ll=37.396258,-122.041098&z=9&t=m&hl=en-US&gl=US&mapclient=embed&q=Silicon+Valley+California). 
 
@@ -707,7 +713,7 @@ Now we said we'd handle some aspects of the embed code via our stylesheet:
 
 Here we are just telling it to take up the containers full width and have a height of 300px.
 
-#### Step 14
+#### Step 18
 
 Finally our final step for the homepage, adding the footer:
 
@@ -744,7 +750,7 @@ We'll add some basic styling to give the text a cleaner look:
 }
 ```
 
-#### Step 15
+#### Step 19
 
 Now that we've completed the homepage let's look at how we can clean up the code a bit. For this next part, we're gonna use a little bit of `php`, specifically we'll use the `require` function. This function is supplied a path to a file and includes whatever code is in it, into the file that utilizes the `require` function.  
 
