@@ -6,6 +6,25 @@ What is a website? A website is a compilation of webpages, these webpages compri
 
 [![alt text](tutorial-assets/img/html-tag-explanation.jpg "HTML Tag explanation")](tutorial-assets/img/html-tag-explanation.jpg)
 
+#### Hierarchy
+HTML is very much like a tree structure, for instance with a tag like the `body` you may multiple child tags like `div` tags. Inside of those `div` tags maybe other child `div` tags and really any other html tag you could want to use. This parent child relationship is how we can understand what elements belong to what. Below is a small example:
+
+```html
+<body>
+  <div id="parent">
+    <div class="child-item"></div>
+    <div class="child-item"></div>
+    <div class="child-item">
+      <div class="other-child-items"></div>
+      <div class="other-child-items"></div>
+      <div class="other-child-items"></div>
+    </div>
+  </div>
+</body>
+```
+
+Here you can see that the body has one child item `#parent`, which has three `.child-item` divs and the last one has 3 other `.other-child-items` divs inside it. This is denoted by wrapping the child elements with the parent tags starting and ending tag.
+
 ## CSS
 Styles are what describe the visual style of these elements. They use selectors with style rules to define how each html element should look. By default browsers apply a base level of styling just for your info.
 

@@ -218,35 +218,102 @@ So altogether, you'll also notice each `wrap` element has an `id` attribute, thi
 </html>
 ```
 
-From here on out well focus on each individual section, adding the content and styling working from the top down.
+Let's also add a custom font to help clean up the websites look and feel, we can do this by opening up our `css/app.css` and adding the following line at the top of the file:
 
-#### Step 5
-Let's start with the `#hero` section, let's add the following markup:
-
-```html
-<section class="wrap" id="hero">
-    <div class="container container__stacked text-center">
-        <h1>Music . <b>Love</b> . Life</h1>
-        <h4>Making music easier to find, share and love!</h4>
-
-        <ul class="hero-btns">
-            <li><a class="btn btn-transparent" href="">Join</a></li>
-            <li><a class="btn btn-primary" href="">Start <b>discovering</b></a></li>
-        </ul>
-    </div>
-</section>
+```css
+@import "//fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic";
 ```
 
-Some things to note:
-- Our text is center aligned
-- The background image
+A brief explanation, on the web there are webfonts, this allows custom fonts that are not installed on a users computer to be used on the web. Google has an open source [font library](https://fonts.google.com/) that is free to use, it gives you a wide variety of fonts to choose from and it's a resource you don't have to host yourself.
 
-Let's start some general styles by adding the following lines to the `app.css`:
+We'll also add some basic styling overrides to customize the look and feel of our webpage just a bit:
 
-This `.text-center` class will allow us to easily center the text inside of whatever tag we apply this class to. It can easily be attached any html tag by doing this `class="text-center"`
+```css
+body {
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 100;
+    font-size: 1.0em;
+}
+
+p {
+    font-size: 16px;
+}
+
+h1,h2,h3,h4,h5 {
+    font-weight: 100;
+}
+
+h2 {
+    color: #603D77;
+    font-size: 32px;
+    margin: 0;
+}
+
+p {
+    margin: 10px 0;
+    line-height: 150%;
+}
+
+b {
+    font-weight: 700;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+label {
+    display: block;
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/**
+ *  Helper classes
+ */
+.img {
+    max-width: 100%;
+}
+
+.img-thumbnail {
+    border: 5px solid #fff;
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.25);
+}
+```
+
+At the very top in the `body` rule you'll see this line `font-family: 'Source Sans Pro', sans-serif;` Remember we imported the google font, this essentially tells the entire page to use this font. 
+
+I'm not gonna go into to much detail about what these styles do, they are very basic and mostly resets to the user agent / defaults. The class `.img-thumbnail` is a helper class to give the images just a little bit more styling and make them look a little bit cleaner when displayed on the website. An example of how this class will look when applied to an image is below highlighted in red:
+
+[![alt text](img/sample-thumbnail.jpg "Thumbnail example")](img/sample-thumbnail.jpg)
+
+Next let's start some general styles by adding the following lines to the `app.css`:
+
+You'll also notice these three lines in the `.img-thumbnail` styles:
+
+```css
+-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.25);
+-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.25);
+box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.25);
+```
+
+This is the same exact rule, the difference is that some of the rules have a `-prefix-`. These prefixes are because not every browser supports code written the same way. These browser prefixes allow the browsers that don't support the plain `box-shadow` rule, unless you have the browser prefix, the browser won't know how to apply this rule. You can find a good more detailed explanation here in this [article](https://www.lifewire.com/css-vendor-prefixes-3466867).
+
+This `.text-center` and `.text-left` class will allow us to easily align center or left the text inside of whatever tag we apply this class to. It can easily be attached any html tag by doing this `class="text-center"` or `class="text-left"`. Text by default aligns to the left, but there will be times where you may set something to align center, but have child items that need to be left aligned which is where the `.text-left` class will come in handy.
+
 ```css
 .text-center {
     text-align: center;
+}
+
+.text-left {
+    text-align: left;
 }
 ```
 
@@ -280,3 +347,144 @@ The following is another helper class, by add this class similarly the way we di
 }
 ```
 
+From here on out well focus on each individual section, adding the content and styling working from the top down.
+
+#### Step 5
+Let's start with the `#hero` section, let's add the following markup:
+
+```html
+<section class="wrap" id="hero">
+    <div class="container container__stacked text-center">
+        <h1>Music . <b>Love</b> . Life</h1>
+        <h4>Making music easier to find, share and love!</h4>
+
+        <ul class="hero-btns">
+            <li><a class="btn btn-transparent" href="">Join</a></li>
+            <li><a class="btn btn-primary" href="">Start <b>discovering</b></a></li>
+        </ul>
+    </div>
+</section>
+```
+
+Some things to note:
+- Our text is center aligned
+- The background image
+
+Next we'll add the styles for the hero section:
+
+Here we'll apply the background image, we'll set the size to cover so that the image stretches to the full width of the container/screen size.  
+```css
+#hero {
+    background: url(/img/people-night.jpg) no-repeat center top;
+    background-size: cover;
+}
+```
+
+This add some padding to the container item, we'll also apply some color and text shadow to the headline:
+```css
+#hero .container {
+    padding: 100px 0;
+}
+
+#hero h1, #hero h4 {
+    color: #fff;
+    text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.75);
+}
+```
+
+Below are more styles to give the text a bit more life.
+```css
+#hero h1 {
+    font-size: 74px;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+#hero h1 b {
+    font-size: 104px;
+}
+
+#hero h4 {
+    font-size: 34px;
+    margin: 0;
+    font-weight: 300;
+}
+```
+
+#### Step 6
+
+Next well style the buttons, positioning and display within this section:
+```css
+.hero-btns {
+    margin: 50px 0 0;
+}
+
+.hero-btns li {
+    display: inline-block;
+    margin: 0 5px;
+}
+```
+
+Next let's add some styles to give the buttons the right look and feel, these classes will be able to placed on any link or button and give them this look and feel.
+```css
+.btn {
+    cursor: pointer;
+    font-size: 16px;
+    display: inherit;
+    font-weight: 400;
+    border-radius: 7px;
+    padding: 10px 20px;
+    text-decoration: none;
+    -moz-border-radius: 7px;
+    text-transform: uppercase;
+    -webkit-border-radius: 7px;
+}
+
+.btn-transparent {
+    color: #fff;
+    border: 2px solid #fff;
+    background: transparent;
+}
+
+.btn-transparent:hover {
+    background: rgba(255,255,255,0.1) ;
+}
+
+.btn-primary {
+    color: #fff;
+    border: 2px solid #3B1156;
+    background: #603D77;
+}
+
+.btn-primary:hover {
+    background: #593571;
+}
+```
+
+In this code you'll notice the `:hover` added to some of the selectors, this is basically saying when the mouse hovers over this item, apply these rules. It gives us the ability to customize styling and give feedback to the user when events happen.
+
+At this point your site should look something like this:
+
+[![alt text](img/sample-hero-section.jpg "Full example")](img/sample-hero-section.jpg)
+
+#### Step 7
+
+Next let's add the navigational html markup:
+
+```html
+<navigation class="wrap" id="navigation">
+    <div class="container">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/discover.php">Discover</a></li>
+            <li><a href="/categories.php">Categories</a></li>
+            <li><a href="/genre.php">Genre</a></li>
+            <li><a href="/sponsors.php">Sponsors</a></li>
+            <li><a href="/contact.php">Contact</a></li>
+        </ul>
+    </div>
+</navigation>
+```
+
+Here we are using a unordered list with links as each one of the list items content. We've added the links to the individual pages, but the pages don't exist so if you click any of the links it will take you to a `Not Found` which is a 404 error page. A 404 error code is part of a set of codes that describe what has happened on a page or resource loaded by the server. More on status codes can be found here in this [article](https://www.restapitutorial.com/httpstatuscodes.html)

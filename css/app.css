@@ -1,3 +1,5 @@
+@import "//fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic";
+
 /**
  *  General overwrite styles
  */
@@ -124,7 +126,6 @@ label {
 #hero {
     background: url(/img/people-night.jpg) no-repeat center top;
     background-size: cover;
-    text-align: center;
 }
 
 #hero .container {
@@ -163,20 +164,22 @@ label {
 }
 
 .btn {
-    display: inherit;
-    padding: 10px 20px;
+    cursor: pointer;
     font-size: 16px;
+    display: inherit;
     font-weight: 400;
-    text-transform: uppercase;
     border-radius: 7px;
-    -webkit-border-radius: 7px;
-    -moz-border-radius: 7px;
+    padding: 10px 20px;
     text-decoration: none;
+    -moz-border-radius: 7px;
+    text-transform: uppercase;
+    -webkit-border-radius: 7px;
 }
 
 .btn-transparent {
     color: #fff;
     border: 2px solid #fff;
+    background: transparent;
 }
 
 .btn-transparent:hover {
