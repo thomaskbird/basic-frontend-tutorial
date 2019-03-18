@@ -1,4 +1,4 @@
-<div class="module">
+<div class="module container__stacked">
     <div class="module-header">
         <h4>Sidebar links</h4>
     </div>

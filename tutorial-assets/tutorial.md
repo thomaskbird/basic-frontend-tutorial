@@ -758,6 +758,7 @@ For our example we'll section by section externalize the parts that will be used
 
 - `hero -> lib/homepage-hero.php`
 - `header -> lib/header.php`
+- `map -> lib/map.php`
 - `locations -> lib/locations.php`
 - `footer -> lib/footer.php`
 
@@ -843,9 +844,7 @@ So when `php` reads the `index.php` and sees the require line it will grab the c
 
 <?php require 'lib/locations.php'; ?>
 
-<section class="wrap" id="map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d405691.57240383344!2d-122.3212843181106!3d37.40247298383319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb68ad0cfc739%3A0x7eb356b66bd4b50e!2sSilicon+Valley%2C+CA!5e0!3m2!1sen!2sus!4v1458624896221" frameborder="0" style="border:0" allowfullscreen></iframe>
-</section>
+<?php require 'lib/map.php'; ?>
 
 <?php require 'lib/footer.php'; ?>
 
@@ -927,7 +926,10 @@ In between our header and footer include we'll place the following markup:
 
 This gives us the full content of the inside page. Using this templated approach we make things much more efficient, maintainable and easier to read. Let's add some basic styling for the new markup:
 
+#### Step 4
+
 These lines basically say, we want to divide the container width into 4 parts. Of that 4 parts we want the sidebar to take 1/4 or 25% and the main content area to take 3/4 or 75% of the width. We accomplish that by applying `flex: 1;` to the `.sidebar` and `flex: 3;` to the `.content` classes.
+
 ```css
 .inside-page-content .sidebar {
     flex: 1;
@@ -939,16 +941,18 @@ These lines basically say, we want to divide the container width into 4 parts. O
 }
 ```
 
+#### Step 5
+
 This next step is a little more interesting, we've named the classes generically so that this set of code and styles can be reused. Right now we just have a set of example links in the sidebar and we've styled it to look like a box with a header and content area.
 ```css
 .module {
-    width: 100%;
+    display: flex;
+    padding: 5px 0;
     background: #fff;
     border: 1px solid #f5f5f5;
-    padding: 5px 0;
-    -webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.5);
-    -moz-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.5);
     box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.5);
 }
 
 .module .module-header {
@@ -957,16 +961,16 @@ This next step is a little more interesting, we've named the classes generically
 
 .module .module-header h4 {
     margin: 0;
+    color: #333;
     padding: 10px;
     font-weight: 400;
-    color: #333;
 }
 
 .module a {
-    display: block;
+    color: #666;
+    display: flex;
     padding: 5px 10px;
     text-decoration: none;
-    color: #666;
 }
 
 .module a:hover {
@@ -974,4 +978,113 @@ This next step is a little more interesting, we've named the classes generically
 }
 ```
 
+And that is about it for the inside page template.
+
+#### Step 6
+Now take this file and copy and paste it for everyone of the items below naming it the text below:
+
+- categories.php
+- discover.php
+- genre.php
+- sponsors.php
+
+#### Step 7
+
+Once you've created all of these files if you open each on individually you'll see the following code:
+
+```html
+<div class="content">
+    <h2>Discover new music!</h2>
+</div>
+```
+
+I would go ahead and change that `<h2>` tag and put some kind of text related to the filename. For instance for `genre.php` maybe replace the title text with something like `Find music by genre!` and for `sponsors.php` maybe something like `We have a lot of great people, that helped us make this possible!`. This way when you are actually navigating to different pages you'll see the content change.
+
+## Contact us page
+Onto the fun part writing a page that will actually receive textual input from a user and do something with it. Just a quick disclaimer: We will be using a native php function to send email, you should **NOT** do this in a production environment! Below is an example of what the page will look like after we complete it:
+
 [![alt text](img/sample-contact-us-template.jpg "Contact us template")](img/sample-contact-us-template.jpg)
+
+So let's go ahead and first create the html markup for page:
+ 
+#### Step 1
+Start by copying and pasting one of the previous inside page templates and renaming it to `contact.php`.
+
+#### Step 2 
+
+Let's get rid of everything in the content area and make sure to require the following files:
+
+```html
+<!doctype html>
+<html>
+<head>
+<title>Basic Demo Tutorial</title>
+
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/app.css" />
+
+</head>
+<body>
+
+<?php require 'lib/header.php'; ?>
+
+
+
+<?php require 'lib/locations.php'; ?>
+
+<?php require 'lib/map.php'; ?>
+
+<?php require 'lib/footer.php'; ?>
+
+</body>
+</html>
+```
+
+#### Step 3
+
+Now that we have this in place we can add the actual form code:
+
+```html
+<div class="wrap" id="contact-form">
+    <div class="container container__stacked text-center">
+        <h2>Get in touch, with us!</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores aut debitis, eum ex facilis fugiat harum illum inventore molestias necessitatibus omnis possimus praesentium quae quam quisquam, repudiandae voluptas voluptate? Aliquid asperiores aut debitis, eum ex facilis fugiat harum illum inventore molestias necessitatibus omnis possimus praesentium quae quam quisquam, repudiandae voluptas voluptate.</p>
+
+        <form action="process/contact.php" method="post" class="text-left">
+
+            <div class="form-group width-full">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name..." />
+            </div>
+
+            <div>
+                <div class="form-group width-half">
+                    <label for="phone">Phone</label>
+                    <input type="text" class="form-control" name="phone" id="phone" placeholder="Enter phone..." />
+                </div>
+                <div class="form-group width-half">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" name="email" id="email" placeholder="Enter email..." />
+                </div>
+            </div>
+
+            <div class="form-group width-full">
+                <label for="message">Message</label>
+                <textarea class="form-control" name="message" id="message" placeholder="Enter your message..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Send message</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+```
+
+We won't discuss to in depth what this code does, mostly its some basic html with a form element and some form input tags. We'll describe a few things on a very high level:
+
+```html
+<form action="process/contact.php" method="post" class="text-left">
+```
+This is the opening `form` tag, it denotes that all of the child elements should be recognized as part of this form. The `action` attribute is the file that will be used to process the input from this form. The `method` is how we handle and send data to the server, the most common are `post` and `get` but there are many others. A more in detail description can be found in [this article](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Sending_and_retrieving_form_data). You can find more on html form elements [here](../basics.md#)
