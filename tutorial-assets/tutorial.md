@@ -857,9 +857,12 @@ So when `php` reads the `index.php` and sees the require line it will grab the c
 ```
 
 ## Inside page template
-Next well create our inside page template, this page will be very simple. It will have the header, footer and main content area. Below is a graphic example of the inside page:
+Next well create our inside page template, this page will be very simple. It will have the header, footer and main content area. Note: All content in this site is fictious and completely made up to give us the look and feel of what a real website would look like. Below is a graphic example of the inside page:
 
 [![alt text](img/sample-inside-page.jpg "Inside template")](img/sample-inside-page.jpg)
+
+#### Step 1
+We'll utilize our `lib/header.php` and `lib/footer.php` files to import the global sections. The main content area will be have a sidebar on the left and a main content area on the right.
 
 ```html
 <!doctype html>
@@ -875,6 +878,19 @@ Next well create our inside page template, this page will be very simple. It wil
 
 <?php require 'lib/header.php'; ?>
 
+
+
+<?php require 'lib/footer.php'; ?>
+
+</body>
+</html>
+```
+
+#### Step 2
+
+In between our header and footer include we'll place the following markup:
+
+```html
 <div class="wrap inside-page-content" id="sponsors">
     <div class="container">
 
@@ -907,11 +923,55 @@ Next well create our inside page template, this page will be very simple. It wil
 
     </div>
 </div>
+```
 
-<?php require 'lib/footer.php'; ?>
+This gives us the full content of the inside page. Using this templated approach we make things much more efficient, maintainable and easier to read. Let's add some basic styling for the new markup:
 
-</body>
-</html>
+These lines basically say, we want to divide the container width into 4 parts. Of that 4 parts we want the sidebar to take 1/4 or 25% and the main content area to take 3/4 or 75% of the width. We accomplish that by applying `flex: 1;` to the `.sidebar` and `flex: 3;` to the `.content` classes.
+```css
+.inside-page-content .sidebar {
+    flex: 1;
+}
+
+.inside-page-content .content {
+    flex: 3;
+    margin-left: 30px;
+}
+```
+
+This next step is a little more interesting, we've named the classes generically so that this set of code and styles can be reused. Right now we just have a set of example links in the sidebar and we've styled it to look like a box with a header and content area.
+```css
+.module {
+    width: 100%;
+    background: #fff;
+    border: 1px solid #f5f5f5;
+    padding: 5px 0;
+    -webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.25);
+}
+
+.module .module-header {
+    background: #f5f5f5;
+}
+
+.module .module-header h4 {
+    margin: 0;
+    padding: 10px;
+    font-weight: 400;
+    color: #333;
+}
+
+.module a {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #666;
+}
+
+.module a:hover {
+    background: #f5f5f5;
+}
 ```
 
 [![alt text](img/sample-contact-us-template.jpg "Contact us template")](img/sample-contact-us-template.jpg)
