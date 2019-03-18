@@ -1088,3 +1088,24 @@ We won't discuss to in depth what this code does, mostly its some basic html wit
 <form action="process/contact.php" method="post" class="text-left">
 ```
 This is the opening `form` tag, it denotes that all of the child elements should be recognized as part of this form. The `action` attribute is the file that will be used to process the input from this form. The `method` is how we handle and send data to the server, the most common are `post` and `get` but there are many others. A more in detail description can be found in [this article](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Sending_and_retrieving_form_data). You can find more on html form elements [here](../basics.md#user-content-html-form-inputs)
+
+Next well briefly discuss how input works, since we are using the `post` method for sending the form data, when we go to process data and grab something like the user input for the `name="name"` input, we'll have to access the value like so:
+
+```php
+$name = $_POST['name'];
+```
+
+Had we used `get` as the `method`, we would access the name this way:
+
+```php
+$name = $_GET['name'];
+``` 
+
+Pretty simple right? The following is a label and single line text input field:
+
+```html
+<label for="name">Name</label>
+<input type="text" class="form-control" name="name" id="name" placeholder="Enter your name..." />
+```
+
+The `label` attribute `for` must equal the `id` attribute on the `input`. This will allow for when the `label` is clicked to automatically focus into the the corresponding text input field. The `name` attribute and `id` attribute must be unique for every form element.
