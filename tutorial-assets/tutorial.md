@@ -1,12 +1,14 @@
 # Tutorial
 
-We'll be building this example website:
+We'll be building this example website, it will contain three main templates, a homepage, inside and contact us template. We'll start by building this homepage:
 
 [![alt text](img/sample-full-finished-example.jpg "Full example")](img/sample-full-finished-example.jpg)
 
 To run this code and view it, go into your command prompt and cd into this directory then run this command:
 
 `php -S localhost:8000`
+
+## Homepage template creation
 
 #### Step 1 
 - Create an index file, for this tutorial we'll use the `.php` extension so that you can make use of some basic php scripting.
@@ -475,7 +477,7 @@ Next let's add the navigational html markup:
 ```html
 <navigation class="wrap" id="navigation">
     <div class="container">
-        <ul>
+        <ul class="row">
             <li><a href="/">Home</a></li>
             <li><a href="/discover.php">Discover</a></li>
             <li><a href="/categories.php">Categories</a></li>
@@ -488,3 +490,422 @@ Next let's add the navigational html markup:
 ```
 
 Here we are using a unordered list with links as each one of the list items content. We've added the links to the individual pages, but the pages don't exist so if you click any of the links it will take you to a `Not Found` which is a 404 error page. A 404 error code is part of a set of codes that describe what has happened on a page or resource loaded by the server. More on status codes can be found here in this [article](https://www.restapitutorial.com/httpstatuscodes.html)
+
+Next we'll add some styling:
+
+```css
+#navigation {
+    background: #603D77;
+}
+
+#navigation a {
+    color: #bbb;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: inherit;
+    border-top: 1px solid transparent;
+    border-bottom: 5px solid transparent;
+}
+
+#navigation a:hover {
+    color: #fff;
+    background: #513067;
+    border-top: 1px solid #C3A3D8;
+    border-bottom: 5px solid #3B1156;
+}
+```
+
+#### Step 8
+
+Let's create the mission section next:
+
+```html
+<section class="wrap" id="mission">
+    <div class="container container__stacked text-center">
+        <h2>Mission</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores aut debitis, eum ex facilis fugiat harum illum inventore molestias necessitatibus omnis possimus praesentium quae quam quisquam, repudiandae voluptas voluptate? Aliquid asperiores aut debitis, eum ex facilis fugiat harum illum inventore molestias necessitatibus omnis possimus praesentium quae quam quisquam, repudiandae voluptas voluptate.</p>
+    </div>
+</section>
+```
+
+Let's give this section a slightly different background, we'll also add the `#our-people` to apply this styling to this element as well: 
+
+```css
+#mission,
+#our-people {
+    background: #f5f5f5;
+}
+```
+
+#### Step 9
+
+Let's add the devices section markup:
+
+```html
+<section class="wrap" id="devices">
+    <div class="container text-center">
+        <div class="column">
+            <img class="img img-thumbnail" src="img/devices.jpg" alt="Works on all devices" />
+        </div>
+        <div class="column">
+            <h2>Works where ever you are, on whatever device you're using!</h2>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi commodi consequuntur, dolore dolores, eum expedita explicabo illo inventore iusto molestiae non quae quam quasi recusandae repellat, totam veniam vitae voluptatibus!</p>
+
+            <a class="btn btn-primary" href=""><b>Download</b> from the app store</a>
+        </div>
+    </div>
+</section>
+```
+
+#### Step 10
+
+We'll a little about us content:
+
+```html
+<section class="wrap" id="our-people">
+    <div class="container container__stacked text-center">
+        <h2>We value our team, check us out!</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores aut debitis, eum ex facilis fugiat harum illum inventore molestias necessitatibus omnis possimus praesentium quae quam quisquam, repudiandae voluptas voluptate? Aliquid asperiores aut debitis, eum ex facilis fugiat harum illum inventore molestias necessitatibus omnis possimus praesentium quae quam quisquam, repudiandae voluptas voluptate. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores aut debitis, eum ex facilis fugiat harum illum inventore molestias necessitatibus omnis possimus praesentium quae quam quisquam, repudiandae voluptas voluptate? Aliquid asperiores aut debitis, eum ex facilis fugiat harum illum inventore molestias necessitatibus omnis possimus praesentium quae quam quisquam, repudiandae voluptas voluptate.</p>
+    </div>
+</section>
+```
+
+#### Step 11
+
+We're gonna add a nice montage to help show a little bit of the company culture. The images are supplied by [Pexels](https://www.pexels.com/), it's a great completely free option for finding stock photos that you can use. Again here we'll use a unordered list tag with list items containing an image element.
+```html
+<section class="wrap" id="about">
+    <ul class="row">
+        <li><img class="montage" src="img/people-1.jpg" /></li>
+        <li><img class="montage" src="img/people-2.jpg" /></li>
+        <li><img class="montage" src="img/people-3.jpg" /></li>
+        <li><img class="montage" src="img/people-4.jpg" /></li>
+        <li><img class="montage" src="img/people-5.jpg" /></li>
+        <li><img class="montage" src="img/people-6.jpg" /></li>
+    </ul>
+</section>
+```
+
+Just a bit about `flex-wrap`, below you'll notice something new and different than anything that we've done before. `flex-wrap: wrap;` This essentially allows us to apply a width to all the child elements, and if the number of total elements exceeds the container width then to wrap the elements causing them to go down to the next line.
+```css
+#about ul {
+    flex-wrap: wrap;
+}
+```
+
+Below we see `flex: 1 1 33.333333%;` this a shorthand way of writing the flex rules. This is actually the exact same as:
+
+```css
+flex-grow: 1;
+flex-shrink: 1;
+flex-basis: 33.3333%;
+```
+
+It gives us a shorthand quicker way of writing the above.
+
+```css
+#about li {
+    line-height: 0;
+    flex: 1 1 33.333333%;
+}
+```
+
+We'll also added a bit of style so that when someone hovers the image the opacity will go from 50% to 100% opaque. You'll also notice the `max-width` which means there is no width defined unless the image is wider than the containing element.
+```css
+#about img {
+    opacity: .5;
+    max-width: 100%;
+}
+
+#about img:hover {
+    opacity: 1;
+}
+```
+
+#### Step 12
+
+Let's now add a locations section, this could be for multiple office locations etc:
+
+```html
+<section class="wrap" id="map-intro">
+    <div class="container container__stacked">
+        <h2 class="text-center">We have numerous locations globally</h2>
+
+        <div class="row">
+            <div class="address">
+                <p><b>Headquarters</b><br/>
+                    123 Somewhere Rd.<br/>
+                    Silicon Valley, CA 94301<br/>
+                    P: 800-567-4958</p>
+            </div>
+
+            <div class="address">
+                <p><b>Headquarters</b><br/>
+                    123 Somewhere Rd.<br/>
+                    Silicon Valley, CA 94301<br/>
+                    P: 800-567-4958</p>
+            </div>
+
+            <div class="address">
+                <p><b>Headquarters</b><br/>
+                    123 Somewhere Rd.<br/>
+                    Silicon Valley, CA 94301<br/>
+                    P: 800-567-4958</p>
+            </div>
+
+            <div class="address">
+                <p><b>Headquarters</b><br/>
+                    123 Somewhere Rd.<br/>
+                    Silicon Valley, CA 94301<br/>
+                    P: 800-567-4958</p>
+            </div>
+        </div>
+    </div>
+</section>
+```
+
+Just a bit of css to add some padding and tell the items to be equal width by specifying `flex: 1;`
+
+```css
+.address {
+    flex: 1;
+    padding: 15px;
+    box-sizing: border-box;
+}
+```
+
+#### Step 13
+
+The next section is kind of special, we are going to basically utilize [Google Maps](https://maps.google.com/) and it's embed option to create a full width panning map. Google allows you to display a map on your webpage easily, using there [embed option](https://www.google.com/maps?ll=37.396258,-122.041098&z=9&t=m&hl=en-US&gl=US&mapclient=embed&q=Silicon+Valley+California). 
+
+The only thing we are going to different is remove a couple attributes, specifically the `height` and `width`. Google automatically in it's embed code supplies those attributes, but we want to strip them and use css to style the map. Below is a direct example of what the google embed code looks like:
+
+`<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d811450.4365352363!2d-122.041098!3d37.396258!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb68ad0cfc739%3A0x7eb356b66bd4b50e!2sSilicon+Valley%2C+CA!5e0!3m2!1sen!2sus!4v1552932162631" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>`
+
+So what we want is:
+
+``<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d811450.4365352363!2d-122.041098!3d37.396258!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb68ad0cfc739%3A0x7eb356b66bd4b50e!2sSilicon+Valley%2C+CA!5e0!3m2!1sen!2sus!4v1552932162631" frameborder="0" style="border:0" allowfullscreen></iframe>``
+
+Which you see below:
+
+```html
+<section class="wrap" id="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d405691.57240383344!2d-122.3212843181106!3d37.40247298383319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb68ad0cfc739%3A0x7eb356b66bd4b50e!2sSilicon+Valley%2C+CA!5e0!3m2!1sen!2sus!4v1458624896221" frameborder="0" style="border:0" allowfullscreen></iframe>
+</section>
+```
+
+Now we said we'd handle some aspects of the embed code via our stylesheet:
+
+```css
+#map iframe {
+    width: 100%;
+    height: 300px;
+}
+```
+
+Here we are just telling it to take up the containers full width and have a height of 300px.
+
+#### Step 14
+
+Finally our final step for the homepage, adding the footer:
+
+```html
+<footer class="wrap" id="footer">
+    <div class="container container__stacked text-center">
+        <h2><b>Music Made Easy,</b> Just The Way We Like It!</h2>
+
+        &copy; <?php echo date('Y'); ?> All rights reserved.
+        Photo Credit: <a target="_blank" href="https://www.pexels.com/">https://www.pexels.com</a>
+    </div>
+</footer>
+```
+
+We'll add some basic styling to give the text a cleaner look:
+
+```css
+#footer {
+    background: #603D77;
+    color: #fff;
+}
+
+#footer h2 {
+    color: #fff;
+}
+
+#footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#footer a:hover {
+    text-decoration: underline;
+}
+```
+
+#### Step 15
+
+Now that we've completed the homepage let's look at how we can clean up the code a bit. For this next part, we're gonna use a little bit of `php`, specifically we'll use the `require` function. This function is supplied a path to a file and includes whatever code is in it, into the file that utilizes the `require` function.  
+
+For our example we'll section by section externalize the parts that will be used in different areas. So well externalize these sections:
+
+- `hero -> lib/homepage-hero.php`
+- `header -> lib/header.php`
+- `locations -> lib/locations.php`
+- `footer -> lib/footer.php`
+
+So for the hero section, in our `index.php` we'll add this line:
+
+```html
+<?php require 'lib/homepage-hero.php'; ?>
+```
+
+In that file we'll put this markup:
+
+```html
+<section class="wrap" id="hero">
+    <div class="container container__stacked text-center">
+        <h1>Music . <b>Love</b> . Life</h1>
+        <h4>Making music easier to find, share and love!</h4>
+
+        <ul class="hero-btns">
+            <li><button class="btn btn-transparent" href="">Join</button></li>
+            <li><a class="btn btn-primary" href="">Start <b>discovering</b></a></li>
+        </ul>
+    </div>
+</section>
+```
+
+So when `php` reads the `index.php` and sees the require line it will grab the contents of the file and replace the require line with the content. So go and do that for each of the sections listed above, after you've done that your code should look like this:
+
+```html
+<!doctype html>
+<html>
+<head>
+<title>Basic Demo Tutorial</title>
+
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/app.css" />
+
+</head>
+<body>
+
+<?php require 'lib/homepage-hero.php'; ?>
+
+<?php require 'lib/header.php'; ?>
+
+<section class="wrap" id="mission">
+    <div class="container container__stacked text-center">
+        <h2>Mission</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores aut debitis, eum ex facilis fugiat harum illum inventore molestias necessitatibus omnis possimus praesentium quae quam quisquam, repudiandae voluptas voluptate? Aliquid asperiores aut debitis, eum ex facilis fugiat harum illum inventore molestias necessitatibus omnis possimus praesentium quae quam quisquam, repudiandae voluptas voluptate.</p>
+    </div>
+</section>
+
+<section class="wrap" id="devices">
+    <div class="container text-center">
+        <div class="column">
+            <img class="img img-thumbnail" src="img/devices.jpg" alt="Works on all devices" />
+        </div>
+        <div class="column">
+            <h2>Works where ever you are, on whatever device you're using!</h2>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi commodi consequuntur, dolore dolores, eum expedita explicabo illo inventore iusto molestiae non quae quam quasi recusandae repellat, totam veniam vitae voluptatibus!</p>
+
+            <a class="btn btn-primary" href=""><b>Download</b> from the app store</a>
+        </div>
+    </div>
+</section>
+
+<section class="wrap" id="our-people">
+    <div class="container container__stacked text-center">
+        <h2>We value our team, check us out!</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores aut debitis, eum ex facilis fugiat harum illum inventore molestias necessitatibus omnis possimus praesentium quae quam quisquam, repudiandae voluptas voluptate? Aliquid asperiores aut debitis, eum ex facilis fugiat harum illum inventore molestias necessitatibus omnis possimus praesentium quae quam quisquam, repudiandae voluptas voluptate. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores aut debitis, eum ex facilis fugiat harum illum inventore molestias necessitatibus omnis possimus praesentium quae quam quisquam, repudiandae voluptas voluptate? Aliquid asperiores aut debitis, eum ex facilis fugiat harum illum inventore molestias necessitatibus omnis possimus praesentium quae quam quisquam, repudiandae voluptas voluptate.</p>
+    </div>
+</section>
+
+<section class="wrap" id="about">
+    <ul class="row">
+        <li><img class="montage" src="img/people-1.jpg" /></li>
+        <li><img class="montage" src="img/people-2.jpg" /></li>
+        <li><img class="montage" src="img/people-3.jpg" /></li>
+        <li><img class="montage" src="img/people-4.jpg" /></li>
+        <li><img class="montage" src="img/people-5.jpg" /></li>
+        <li><img class="montage" src="img/people-6.jpg" /></li>
+    </ul>
+</section>
+
+<?php require 'lib/locations.php'; ?>
+
+<section class="wrap" id="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d405691.57240383344!2d-122.3212843181106!3d37.40247298383319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb68ad0cfc739%3A0x7eb356b66bd4b50e!2sSilicon+Valley%2C+CA!5e0!3m2!1sen!2sus!4v1458624896221" frameborder="0" style="border:0" allowfullscreen></iframe>
+</section>
+
+<?php require 'lib/footer.php'; ?>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="/js/site.js"></script>
+
+</body>
+</html>
+```
+
+## Inside page template
+Next well create our inside page template, this page will be very simple. It will have the header, footer and main content area. Below is a graphic example of the inside page:
+
+[![alt text](img/sample-inside-page.jpg "Inside template")](img/sample-inside-page.jpg)
+
+```html
+<!doctype html>
+<html>
+<head>
+<title>Basic Demo Tutorial | Sponsors</title>
+
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/app.css" />
+
+</head>
+<body>
+
+<?php require 'lib/header.php'; ?>
+
+<div class="wrap inside-page-content" id="sponsors">
+    <div class="container">
+
+        <div class="sidebar">
+
+            <div class="module">
+                <div class="module-header">
+                    <h4>Sidebar links</h4>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li><a href="">Link 1</a></li>
+                        <li><a href="">Link 2</a></li>
+                        <li><a href="">Link 3</a></li>
+                        <li><a href="">Link 4</a></li>
+                        <li><a href="">Link 5</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="content">
+            <h2>We have a lot of great people, that helped us make this possible!</h2>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores aut debitis, eum ex facilis fugiat harum illum inventore molestias necessitatibus omnis possimus praesentium quae quam quisquam, repudiandae voluptas voluptate? Aliquid asperiores aut debitis, eum ex facilis fugiat harum illum inventore molestias necessitatibus omnis possimus praesentium quae quam quisquam, repudiandae voluptas voluptate.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores aut debitis, eum ex facilis fugiat harum illum inventore molestias necessitatibus omnis possimus praesentium quae quam quisquam, repudiandae voluptas voluptate? Aliquid asperiores aut debitis, eum ex facilis fugiat harum illum inventore molestias necessitatibus omnis possimus praesentium quae quam quisquam, repudiandae voluptas voluptate.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores aut debitis, eum ex facilis fugiat harum illum inventore molestias necessitatibus omnis possimus praesentium quae quam quisquam, repudiandae voluptas voluptate? Aliquid asperiores aut debitis, eum ex facilis fugiat harum illum inventore molestias necessitatibus omnis possimus praesentium quae quam quisquam, repudiandae voluptas voluptate.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores aut debitis, eum ex facilis fugiat harum illum inventore molestias necessitatibus omnis possimus praesentium quae quam quisquam, repudiandae voluptas voluptate? Aliquid asperiores aut debitis, eum ex facilis fugiat harum illum inventore molestias necessitatibus omnis possimus praesentium quae quam quisquam, repudiandae voluptas voluptate.</p>
+        </div>
+
+    </div>
+</div>
+
+<?php require 'lib/footer.php'; ?>
+
+</body>
+</html>
+```
+
+[![alt text](img/sample-contact-us-template.jpg "Contact us template")](img/sample-contact-us-template.jpg)

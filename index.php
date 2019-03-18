@@ -22,10 +22,10 @@
 
 <section class="wrap" id="devices">
     <div class="container text-center">
-        <div class="left">
+        <div class="column">
             <img class="img img-thumbnail" src="img/devices.jpg" alt="Works on all devices" />
         </div>
-        <div class="right">
+        <div class="column">
             <h2>Works where ever you are, on whatever device you're using!</h2>
 
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi commodi consequuntur, dolore dolores, eum expedita explicabo illo inventore iusto molestiae non quae quam quasi recusandae repellat, totam veniam vitae voluptatibus!</p>
@@ -43,7 +43,7 @@
 </section>
 
 <section class="wrap" id="about">
-    <ul>
+    <ul class="row">
         <li><img class="montage" src="img/people-1.jpg" /></li>
         <li><img class="montage" src="img/people-2.jpg" /></li>
         <li><img class="montage" src="img/people-3.jpg" /></li>
@@ -60,6 +60,9 @@
 </section>
 
 <?php require 'lib/footer.php'; ?>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="/js/site.js"></script>
 
 </body>
 </html>
