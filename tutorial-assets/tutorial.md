@@ -1109,3 +1109,43 @@ Pretty simple right? The following is a label and single line text input field:
 ```
 
 The `label` attribute `for` must equal the `id` attribute on the `input`. This will allow for when the `label` is clicked to automatically focus into the the corresponding text input field. The `name` attribute and `id` attribute must be unique for every form element.
+
+Buttons have the `type` attribute, we've set the attribute to `type="submit"`. This tells the form that when the button is clicked to submit this form or run the `action` attribute. 
+
+#### Step 4
+Adding some css to style the form.
+
+```css
+#contact-form {
+    background: #f5f5f5;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    color: #aaa;
+    font-weight: 100;
+    box-sizing: border-box;
+}
+
+.form-group {
+    float: left;
+    margin-bottom: 10px;
+}
+
+.width-full {
+    width: 100%;
+}
+
+.width-half {
+    width: 49%;
+}
+
+.width-half:first-child {
+    margin-right: 2%;
+}
+```
+
+Now that we have the form let's start to work on the interactive part!
